@@ -8,3 +8,15 @@ html {
   max-width: 30em;
   margin: 10% auto;
 }
+
+#text {
+  color: #e3242b;
+  font-size: 30px;
+  text-align: center;
+}
+
+#author {
+  color: #e3242b;
+  font-size: 18px;
+  text-align: right;
+}
