@@ -1,0 +1,10 @@
+html {
+  background: #e3242b;
+}
+
+#quote-box {
+  padding: 1% 2% 4%;
+  background: white;
+  max-width: 30em;
+  margin: 10% auto;
+}
