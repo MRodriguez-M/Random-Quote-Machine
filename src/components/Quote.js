@@ -15,7 +15,7 @@ const Quote = (props) => {
             <div id="quote-box">
                 <p id="text">"{props.quotes[index].quote}"</p>
                 <p id="author">- {props.quotes[index].author}</p>
-                <a id="tweet-quote">
+                <a id="tweet-quote" href="https://twitter.com/intent/tweet" target="_blank">
                     <button id="tweet-button" type="button">
                         <i class="fa fa-twitter"></i> Share on Twitter
                     </button>
