@@ -3,10 +3,12 @@ html {
 }
 
 #quote-box {
-  padding: 1% 2% 4%;
+  padding: 1% 2% 3%;
   background: white;
   max-width: 30em;
   margin: 10% auto;
+  font-family: "Century Gothic", Helvetica, sans-serif;
+  border-radius: 5px;
 }
 
 #text {
@@ -19,6 +21,7 @@ html {
   color: #e3242b;
   font-size: 18px;
   text-align: right;
+  margin-right: 5px;
 }
 
 #new-quote {
@@ -27,6 +30,9 @@ html {
   border: none;
   padding: 10px 18px;
   float: right;
+  font-family: "Century Gothic", Helvetica, sans-serif;
+  border-radius: 5px;
+  margin-right: 5px;
 }
 
 #tweet-button {
@@ -34,4 +40,7 @@ html {
   background-color: #e3242b;
   border: none;
   padding: 10px 10px;
+  font-family: "Century Gothic", Helvetica, sans-serif;
+  border-radius: 5px;
+  margin-left: 5px;
 }
