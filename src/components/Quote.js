@@ -5,7 +5,7 @@ const Quote = (props) => {
     const [index, setIndex] = useState(0);
 
     const handleClick = () => {
-        setIndex(Math.floor(Math.random() * 3));
+        setIndex(Math.floor(Math.random() * 10));
     };
 
     return (
