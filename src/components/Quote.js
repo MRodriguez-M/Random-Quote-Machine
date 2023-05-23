@@ -3,9 +3,36 @@ import { useState } from 'react';
 
 const Quote = (props) => {
     const [index, setIndex] = useState(0);
+    const [indexArr, setIndexArr] = useState([]);
+    
+    const resetIndexArr = () => {
+        for(let i = 0; i < props.quotes.length; i++) {
+            setIndexArr((prevIndexes) => [...prevIndexes, i]);
+        }
+    };
 
     const handleClick = () => {
-        setIndex(Math.floor(Math.random() * 10));
+        if(indexArr.length == 0) {
+            resetIndexArr();
+        }
+
+        let checkNum = Math.floor(Math.random() * 10);
+
+        for(let i = 0; i < indexArr.length; i++) {
+            if(checkNum == indexArr[i]) {
+                setIndex(checkNum);
+                setIndexArr((prevInd) => {
+                    const newIndexArr = [...prevInd];
+                    newIndexArr.splice(i, 1);
+                    return newIndexArr;
+                })
+                break;
+            }
+            else if((checkNum != indexArr[i]) && (i == indexArr.length-1)) {
+                checkNum = Math.floor(Math.random() * 10);
+                i = -1;
+            }
+        }
     };
 
     return (
