@@ -4,28 +4,23 @@ import { useState } from 'react';
 const Quote = (props) => {
     const [index, setIndex] = useState(0);
     const [indexArr, setIndexArr] = useState([]);
-    
-    const resetIndexArr = () => {
-        for(let i = 0; i < props.quotes.length; i++) {
-            setIndexArr((prevIndexes) => [...prevIndexes, i]);
-        }
-    };
 
+    //Checks if all quotes have cycled, generates a random index number to display a quote
     const handleClick = () => {
-        if(indexArr.length == 0) {
-            resetIndexArr();
-        }
-
+        const newIndexArr = [...indexArr];
         let checkNum = Math.floor(Math.random() * 10);
 
-        for(let i = 0; i < indexArr.length; i++) {
-            if(checkNum == indexArr[i]) {
+        if(newIndexArr.length == 0) {
+            for(let i = 0; i < props.quotes.length; i++) {
+                newIndexArr.push(i);
+            }
+        }
+
+        for(let i = 0; i < newIndexArr.length; i++) {
+            if(checkNum == newIndexArr[i]) {
                 setIndex(checkNum);
-                setIndexArr((prevInd) => {
-                    const newIndexArr = [...prevInd];
-                    newIndexArr.splice(i, 1);
-                    return newIndexArr;
-                })
+                newIndexArr.splice(i, 1);
+                setIndexArr(newIndexArr);
                 break;
             }
             else if((checkNum != indexArr[i]) && (i == indexArr.length-1)) {
